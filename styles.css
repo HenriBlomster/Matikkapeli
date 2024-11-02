@@ -1,0 +1,114 @@
+/* Center body content with padding at the top */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 15vh;
+    background-color: #f4f4f9;
+}
+
+/* Title styling */
+#title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Center the game container and adjust spacing */
+#game {
+    text-align: center;
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    margin-top: -20px;
+}
+
+/* Add spacing between elements inside the game box */
+#game label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#game input {
+    margin-bottom: 15px;
+    width: 100%; /* Full width for better alignment */
+}
+
+#game button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+/* Full-screen overlay for meme images */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Remove background color to avoid darkening */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Make sure it appears on top */
+}
+
+#overlay.small img {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: 100px;
+    margin-top: 30px;
+}
+
+
+/* Close the overlay when clicking outside the image */
+#overlay:after {
+    content: "Click anywhere to close";
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-size: 1.2em;
+}
+/* Set 1x reward images to 250x250 and position them lower */
+#overlay.small img {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: 100px; /* Adjust as needed to position the image lower on the screen */
+    margin-top: 50px;
+}
+
+/* Larger reward for 5x images */
+#overlay.large img {
+    width: 400px;
+    height: 400px;
+    position: static; /* Center larger rewards normally */
+}
+/* Specific styling for the law image */
+#overlay.law img {
+    width: 500px; /* Set the width as desired */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Close the overlay when clicking outside the image, only for law image */
+#overlay.law:after {
+    content: "Click anywhere to close";
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+}
+
+/* Remove dismiss text for other overlays */
+#overlay:not(.law):after {
+    content: none;
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matikkapeli</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Overlay for full-screen reward display -->
+    <div id="overlay" style="display: none;">
+        <img id="overlayImage" src="" alt="Reward">
+    </div>
+
+    <!-- Title section -->
+    <div id="title">
+        <h1>Matikkapeli</h1>
+    </div>
+    
+    <!-- First question -->
+    <div id="firstQuestion">
+        <label for="name">Mikä on etunimesi?</label>
+        <input type="text" id="name">
+        <button onclick="checkAuthorization()">Aloita peli</button>
+    </div>
+
+    <div id="difficultySelection" style="display: none;">
+        <label>Valitse vaikeustaso</label>
+        <button onclick="setDifficulty('Helppo')">Helppo</button>
+        <button onclick="setDifficulty('Haastava')">Haastava</button>
+        <button onclick="setDifficulty('Vaikea')">Vaikea</button>
+    </div>
+    
+
+    <!-- Multiplication question -->
+    <div id="multiplicationQuestion" style="display: none;">
+        <p id="questionText"></p>
+        <input type="number" id="answer">
+        <button id="answerButton">Vastaa</button>
+    </div>
+
+    <!-- Play again button -->
+    <div id="playAgain" style="display: none;">
+        <button onclick="playAgain()">Haluatko pelata uudestaan?</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
